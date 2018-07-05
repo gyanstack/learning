@@ -1,0 +1,130 @@
+.ruleCodeSection {
+    border: solid 2px #9a9c9e;
+    margin: 15px 0;
+  }
+  
+  .ruleCodeHead {
+    background: #1975a3;
+    padding: 7px 15px;
+    font: 16px/24px candara, arial;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .ruleCodes {
+    padding: 0 15px;
+  }
+  
+  .ruleCodes ul,
+  .ruleCodes li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ruleCodes li {
+    padding: 5px 20px;
+    border-bottom: solid 1px #ddd;
+    position: relative;
+  }
+  .ruleCodes li:first-child {
+    border-top: solid 0px #ddd;
+  }
+  .ruleCodes li span {
+    color: #106c9c;
+    font: bold 12px/20px arial;
+    text-decoration: underline;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+  }
+  .ruleCodes li span.rulesCodeValue {
+    text-decoration: none;
+  }
+  .ruleCodes li .rulesContent {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+  .ruleCodes li .rulesContent a{
+    cursor: pointer;
+  }
+
+  .mat-input-element {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.chkbox {
+  margin-left: 15px;
+}
+
+.header-border{
+  border-bottom: solid 1px #999;
+}
+
+.item-border{
+  border-bottom: solid 1px #ccc;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.codes-labels{
+  margin: 0;
+  padding: 0px;
+  font: 14px/40px candara, arial;
+}
+
+.heading-text{
+  text-align: center;
+}
+
+.first-header{
+  color: #0a0a0a;
+  font: bold 14px/24px candara, arial;
+  margin: 0;
+  padding: 0;
+}
+
+.second-header{
+  color: #0a0a0a;
+  font: bold 14px/24px candara, arial;
+  margin: 0;
+  padding: 0;
+}
+
+.box-rect {
+  height: 5px;
+  border: 1px solid #333333;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+.padding-bottom {
+  padding-bottom: 15px;
+}
+
+.cancelbuttonClass{    
+  float: right;
+}
+
+.errorInput{
+  border:1px solid red;
+}
+
+.defualt-font-size{
+  font-size: 12px;
+}
+
+.compress-line-height{
+  line-height: 21px;
+}

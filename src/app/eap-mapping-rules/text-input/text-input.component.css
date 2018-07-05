@@ -1,0 +1,59 @@
+.mat-input-element {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.selectList{
+    height: 260px;
+    max-height: 260px; 
+    overflow-y: auto;
+}
+
+::ng-deep .ruleValue .mat-list-item-content{
+    display: block;
+    width: 450px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mat-nav-list .mat-list-item{
+    font-size: small !important;
+    height: 25px !important;
+    border-bottom: solid 1px #ddd;
+}
+
+.mat-card{
+    padding: 5px !important;
+}
+
+::ng-deep .ruleValue .mat-input-wrapper{
+    width:490px !important;
+}
+
+.ruleValue .navListPad{
+    padding: 10px;
+}
+
+.ruleValue .navListPad .mat-raised-button{
+    line-height: 25px;
+    margin: 2px;
+    min-width: 0px;
+}
+
+.ruleValue hr { 
+      margin:5px 0 10px;
+}
+
+/* .md-virtual-repeat-container.md-autocomplete-suggestions-container {
+    height: 250px;
+    max-height: 250px !important;
+} */

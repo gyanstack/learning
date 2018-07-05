@@ -1,0 +1,51 @@
+.deletebuttonClass{
+    background: #1D4E75;
+    color: #fff;
+}
+
+.savebuttonClass{
+    background: #1D4E75;
+    color: #fff;
+}
+    
+.cancelbuttonClass{
+    margin-left: 10px;
+}
+
+.heading
+{
+    font-family: Candara, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #006699;    
+    font-weight: 600;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+            
+.errorInput{
+    border:1px solid red;
+}
+
+.small-hint {
+    color: #7D7C7C;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.mat-success {
+    color: #71BA09;
+}
+
+.processDetailForm {
+    overflow-y: auto;
+    padding-right: 15px;
+}

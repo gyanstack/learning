@@ -1,0 +1,64 @@
+<form [formGroup]="ruleDetailForm" class="ruleValue">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-form-field>
+        <input matInput placeholder="Search {{data.field}}" formControlName="search" width="100%" autocomplete="off">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-content>
+          <mat-nav-list class="selectList">
+            <ng-container *ngFor="let item of searchResult">
+              <a mat-list-item (click)="updateRule(item)">
+                <span matTooltip="{{item}}" [matTooltipPosition]="toolTipPosition">{{ item }} </span>
+              </a>
+            </ng-container>
+          </mat-nav-list>
+          <mat-nav-list class="navListPad">
+            <span>
+              <small>Total Records : {{recordCount}}</small>
+            </span>
+            <span class="pull-right">
+              <i>
+                <small>(click next for more records...)</small>
+              </i>
+              <button mat-raised-button class="btn-small" [disabled]="!showPrevious" (click)="fetchPreviousRecords()">
+                <small>
+                  < </small>
+              </button>
+              <button mat-raised-button [disabled]="!showNext" (click)="fetchNextRecords()">
+                <small> > </small>
+              </button>
+            </span>
+          </mat-nav-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <mat-card>
+        <mat-card-content>
+          <b>
+            <small> Selected Value: {{ruleText}}</small>
+            <input type="hidden" formControlName="rule">
+          </b>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <button mat-raised-button color="theme-blue" [disabled]="!showButton &&( !ruleDetailForm.controls['rule'].value || ruleDetailForm.controls['rule'].value.trim()=='')"
+        (click)="onClearClick()">Clear</button>
+    </div>
+    <div class="col-md-6 text-right">
+      <button mat-raised-button color="theme-blue" [disabled]="!showButton && (ruleDetailForm.pristine && !selected) || !ruleDetailForm.controls['rule'].value || ruleDetailForm.controls['rule'].value.trim()==''"
+        (click)="onUpdateClick()">Update</button>
+      <button mat-raised-button (click)="onCancelClick()" [disabled]="!showButton">Cancel</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,71 @@
+<!-- <div class="row no-left-gutter"> -->
+
+<!-- <tree-root [nodes]="processes" [focused]="true" [options]="options" (activate)="onActivated($event)"
+  (initialized)="onInitialized($event)"  >
+    <ng-template #treeNodeTemplate let-node let-index="index">
+      <div [class.tree-node]="true" 
+      [class.tree-node-expanded]="node.isExpanded && node.hasChildren" 
+      [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+        [class.tree-node-leaf]="node.isLeaf"
+         [class.tree-node-focused]="node.isFocused">
+        <a [ngClass]="{'tree-node-active': node.isActive,'tree-node-active':node.data.id === id}" routerLink="/processhierarchy/{{node.data.id}}"> {{ node.data.name }}</a>
+      </div>
+    </ng-template> -->
+<!-- <ng-template #treeNodeTemplate let-node let-index="index">
+        <div
+        [class]="node.getClass()"
+        [class.tree-node]="true"
+        [class.tree-node-expanded]="node.isExpanded && node.hasChildren"
+        [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+        [class.tree-node-leaf]="node.isLeaf"
+        [class.tree-node-active]="node.isActive"
+        [class.node-content-wrapper-active]="node.isActive"
+        [class.node-content-wrapper-active.node-content-wrapper-focused]="node.isActive"
+        [class.tree-node-focused]="node.isFocused">
+          <span>{{ node.data.name }}</span>
+        </div>
+      </ng-template> -->
+<!-- </tree-root> -->
+<!-- <mat-nav-list>
+    <mat-list-item *ngFor="let process of processes">
+      <button mat-icon-button (click)="showInfo(link)">
+              <mat-icon>info</mat-icon>
+      </button>
+      <a matLine routerLink="/processhierarchy/{{process.id}}">{{ process.name }}</a>
+
+    </mat-list-item>
+  </mat-nav-list> -->
+
+<!-- <ng-template #recursiveList let-list>
+    <ng-container *ngFor="let process of list">
+      <a style="margin-left: 5px;" routerLink="/processhierarchy/{{process.id}}"> {{ process.name }}</a>
+      <br>
+      <ng-container *ngIf="process.children.length > 0">
+        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: process.children }"></ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: processes }"></ng-container> -->
+
+<aside class="tree-view contentWrapper" appAutoHeight [setMaxHeight]=true>
+  <ul>
+    <ng-template #recursiveList let-list>
+      <li *ngFor="let item of list" [hidden]="!item.isActive" [ngClass]="{'has-child': item.children.length > 0, 'open': item.isFieldExpanded, 'active': item.isSelected}">
+        <ng-container *ngIf="item.isActive">
+          <span class="iconButton" (click)="item.toggle(item)"></span>
+          <a (click)="selectItem(item)" (dblclick)="item.toggle(item)" routerLink="/processhierarchy/{{item.id}}">{{ item.name }}</a>
+          <ul *ngIf="item.children && item.isFieldExpanded && item.isActive">
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
+          </ul>
+        </ng-container>
+      </li>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: processes }"></ng-container>
+  </ul>
+</aside>
+
+<!-- <div class="col-md-9">
+  <router-outlet></router-outlet>
+</div>
+</div>
+<div class="clear-fix"></div> -->

@@ -1,0 +1,29 @@
+<div>
+    <tree-root [nodes]="processes" [focused]="true" [options]="options" (activate)="onActivated($event)"
+    (initialized)="onInitialized($event)"  >
+      <ng-template #treeNodeTemplate let-node let-index="index">
+        <div [class.tree-node]="true" 
+        [class.tree-node-expanded]="node.isExpanded && node.hasChildren" 
+        [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+          [class.tree-node-leaf]="node.isLeaf"
+           [class.tree-node-focused]="node.isFocused">
+          <a [ngClass]="{'tree-node-active': node.isActive,'tree-node-active':node.data.id === id}" routerLink="/processhierarchy/{{node.data.id}}"> {{ node.data.name }}</a>
+        </div>
+      </ng-template>
+      <!-- <ng-template #treeNodeTemplate let-node let-index="index">
+          <div
+          [class]="node.getClass()"
+          [class.tree-node]="true"
+          [class.tree-node-expanded]="node.isExpanded && node.hasChildren"
+          [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+          [class.tree-node-leaf]="node.isLeaf"
+          [class.tree-node-active]="node.isActive"
+          [class.node-content-wrapper-active]="node.isActive"
+          [class.node-content-wrapper-active.node-content-wrapper-focused]="node.isActive"
+          [class.tree-node-focused]="node.isFocused">
+            <span>{{ node.data.name }}</span>
+          </div>
+        </ng-template> -->
+    </tree-root>
+  </div>
+  <router-outlet></router-outlet>

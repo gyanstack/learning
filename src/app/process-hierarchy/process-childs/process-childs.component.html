@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-12">
+        <div style="float:left; width: 70%;">
+            <label class="heading">Process Children</label>
+        </div>
+        <div class="colorDiv">
+            <div class="pull-left box box-yellow"></div>
+            <div class="pull-left">Low</div>
+            <div class="pull-left box box-orange"></div>
+            <div class="pull-left">Average</div>
+            <div class="pull-left box box-red"></div>
+            <div class="pull-left">High</div>
+        </div>
+    </div>
+</div>
+<div class="row padTop20">
+    <div class="col-md-12">
+        <!-- <ng-container *ngIf="node.children">
+            <ng-container *ngFor="let child of node.children">
+                <a routerLink="/processhierarchy/{{child.id}}"> {{ child.name }}</a>
+            </ng-container>
+        </ng-container>  -->
+
+        <div class="example-container mat-table-container">
+            <mat-table #table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef class="tabHeading">PROCESS NAME</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> <a class="processNameLink" (click)="routeSelectedChildProcess(element)" routerLink="/processhierarchy/{{element.id}}"> {{element.name}}</a></mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="lowSLA">
+                    <mat-header-cell *matHeaderCellDef class="tabHeading no-gutters SLAheading">
+                        <div class="pull-left col-md-12">
+                            <div class="SLAtitleTag">SLA</div>
+                        </div>
+                        <div class="SLAcolorBox">
+                            <div class="box rect box-yellow"></div>
+                            <div class="box rect box-orange"> </div>
+                            <div class="box rect box-red"> </div>
+                        </div>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                        <div class="SLAvalueBox">
+                            <div class="SLAvaluesTag">{{element.lowSLA}}</div>
+                            <div class="SLAvaluesTag">{{element.averageSLA}} </div>
+                            <div class="SLAvaluesTag"> {{element.highSLA}}</div>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="weight">
+                    <mat-header-cell *matHeaderCellDef class="tabHeading weightTag">WEIGHT</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="weightTag"> {{element.weight}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]">
+            </mat-paginator>
+        </div>
+
+    </div>
+</div>

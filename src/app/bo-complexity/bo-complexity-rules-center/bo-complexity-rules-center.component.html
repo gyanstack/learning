@@ -1,0 +1,33 @@
+<!--Breadcrumb-->
+<div class="row cclBreadcrumb">
+  <div class="col-md-3 breadcrumbLeft">
+    COMPLEXITY TAGGING RULES
+    <i class="breadcrumbIcon"><img src="assets/images/img-EAP.png"></i>
+  </div>
+  <div class="col-md-9 headWrapper">
+    <h2>Rules Details</h2>
+  </div>
+</div>
+<div class="container-fluid contentWrapper" appAutoHeight>
+  <!-- <div class="row">
+    <div class="col-md-12 form-group">
+      <label class="heading">Filter By</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <label>BO Type:</label>
+      <ng-container *ngFor="let bo of BOTypes">
+        <mat-checkbox color="theme-blue" [(ngModel)]=bo.isSelected>{{bo.type}}</mat-checkbox>
+      </ng-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <hr />
+      <button mat-raised-button color="theme-blue" (click)="filterBusinessObjects()">Apply</button>
+    </div>
+  </div> -->
+  
+  <app-bo-complexity-rules [BOTypes] = FilteredBOTypes></app-bo-complexity-rules>
+</div>

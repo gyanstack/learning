@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <header>
+    <div class="row cclHeader">
+      <div class="col-md-3">
+        <div class="cclLogo">
+          <img src="assets/images/logo.png">
+        </div>
+        <img src="assets/images/logo_bottom.png">
+
+      </div>
+      <div class="col-md-9 cclNav">
+        <nav>
+          <ul class="nav navbar-nav">
+            <li routerLinkActive="active">
+              <a routerLink="/processhierarchy">Process Hierarchy</a>
+            </li>
+            <li routerLinkActive="active">
+              <a routerLink="/eapmappingrules">EAP Mapping Rules</a>
+            </li>
+            <li routerLinkActive="active">
+              <a routerLink="/businessobjectsrules">Complexity Tagging Rules</a>
+            </li>
+            <li class="dropdown" routerLinkActive="active">
+              <a routerLink="/transactionuploads">Others</a>
+              <ul class="dropdown-menu dropdownNav">
+                <li routerLinkActive="active">
+                  <a routerLink="/transactionuploads">Manual Transaction</a>
+                </li>
+                <li routerLinkActive="active">
+                  <a routerLink="/nontransactionreftable">Non-Transaction Reference Data</a>
+                </li>
+                <li routerLinkActive="active">
+                  <a routerLink="/businessbankingworkflowdata">Business Banking Workflow Data</a>
+                </li>
+                <li routerLinkActive="active">
+                  <a routerLink="/dealcodes">Deal Complexity Factors</a>
+                </li>
+                <li routerLinkActive="active">
+                  <a routerLink="/loancodes">Loan Complexity Factors</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- /#banner -->
+<div class="container-fluid">
+  <aside id="featured">
+
+  </aside>
+  <!-- /#featured -->
+
+  <section id="content">
+    <div class="loading-overlay" #spinnerElement style="opacity: 0;">
+      <!-- md-spinner is short for <md-progress-circle mode="indeterminate"></md-progress-circle> -->
+      <mat-spinner></mat-spinner>
+
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    <!-- /#posts-list -->
+  </section>
+  <!-- /#content -->
+</div>
+
+
+<div class="container-fluid">
+  <footer>
+    <div class="row cclFooter">
+      <!--<ul>
+        <li><a routerLink="/privacy">Privacy</a></li>
+        <li><a routerLink="/legal">Legal</a></li>
+        <li><a routerLink="/secuirty">Security</a></li>
+        <li><a routerLink="/cdicmember">CDIC Member</a></li>
+        <li><a routerLink="/careers">Careers</a></li>
+        <li><a routerLink="/invstorsrelations">Investors Relations</a></li>
+        <li><a routerLink="/accessibilty">Accessibility</a></li>
+        <li><a routerLink="/support">Support</a></li>
+      </ul>-->
+    </div>
+  </footer>
+</div>

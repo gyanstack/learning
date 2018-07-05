@@ -1,0 +1,55 @@
+<form [formGroup]="ruleDetailForm">
+  <div class="rulesBox">
+    <h2 mat-dialog-title>Complexity Rules</h2>
+
+    <!-- <div class="row form-group">
+      <div class="col-md-12">
+        <label class="heading">Complexity Rules</label>
+        <hr />
+      </div>
+    </div> -->
+
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>BO Type</label>
+      </div>
+      <div class="col-md-9">
+        <label type="text"> {{boRule.type}}</label>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-3">
+        <label>Formula</label>
+      </div>
+      <div class="col-md-9">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" formControlName="rule"
+          matInput matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="10"></textarea>
+      </div>
+    </div>
+
+    <div class="formFooter">
+      <div class="col-md-6 text-left">
+        <button mat-raised-button color="theme-blue" [disabled]="!(ruleDetailForm.controls['ruleId'].value > 0) || isProcessing"
+          (click)="onDeleteClick()">Delete</button>
+      </div>
+      <div class="col-md-6 text-right">
+        <button mat-raised-button color="theme-blue" [disabled]="ruleDetailForm.pristine || !ruleDetailForm.controls['rule'].value || ruleDetailForm.controls['rule'].value.trim()=='' || isProcessing"
+          (click)="onSaveClick()">Save</button>
+        <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+      </div>
+    </div>
+
+    <!-- <div class="row form-group">
+      <div class="col-md-6 text-left">
+        <button mat-raised-button color="theme-blue" 
+        [disabled]="!(ruleDetailForm.controls['ruleId'].value > 0) || isProcessing" (click)="onDeleteClick()">Delete</button>
+      </div>
+      <div class="col-md-6 text-right">
+        <button mat-raised-button color="theme-blue" 
+        [disabled]="ruleDetailForm.pristine || !ruleDetailForm.controls['rule'].value || ruleDetailForm.controls['rule'].value.trim()=='' || isProcessing"
+          (click)="onSaveClick()">Save</button>
+        <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+      </div>
+    </div> -->
+  </div>
+</form>

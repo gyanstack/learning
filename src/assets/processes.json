@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "name": "Processes",
+        "lowSLA": 1,
+        "averageSLA": 2,
+        "highSLA": 3,
+        "weight": 10,
+        "isFieldExpanded": true,
+        "isSelected": false,
+        "isActive": true,
+        "createdOn": 1513580591605,
+        "children": [
+            {
+                "id": 11,
+                "name": "Amendment/Updates",
+                "lowSLA": 1,
+                "averageSLA": 2,
+                "highSLA": 3,
+                "weight": 10,
+                "isFieldExpanded": false,
+                "isSelected": false,
+                "isActive": true,
+                "children": [],
+                "createdOn": 1513580591605
+            },
+            {
+                "id": 12,
+                "name": "Compliance Tracking & Maintance",
+                "lowSLA": 1,
+                "averageSLA": 2,
+                "highSLA": 3,
+                "weight": 10,
+                "isFieldExpanded": false,
+                "isSelected": false,
+                "isActive": true,
+                "children": [],
+                "createdOn": 1513580591605
+            },
+            {
+                "id": 13,
+                "name": "Deal Activity",
+                "lowSLA": 1,
+                "averageSLA": 2,
+                "highSLA": 3,
+                "weight": 10,
+                "isFieldExpanded": false,
+                "isSelected": false,
+                "isActive": true,
+                "children": [
+                    {
+                        "id": 14,
+                        "name": "Deal Maintenance",
+                        "lowSLA": 1,
+                        "averageSLA": 2,
+                        "highSLA": 3,
+                        "weight": 10,
+                        "isFieldExpanded": false,
+                        "isSelected": false,
+                        "isActive": true,
+                        "children": [
+                            {
+                                "id": 15,
+                                "name": "Deal Maintenance Related Events",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            }
+                        ],
+                        "createdOn": 1513580591605
+                    },
+                    {
+                        "id": 16,
+                        "name": "Fee",
+                        "lowSLA": 1,
+                        "averageSLA": 2,
+                        "highSLA": 3,
+                        "weight": 10,
+                        "isFieldExpanded": false,
+                        "isSelected": false,
+                        "isActive": true,
+                        "children": [
+                            {
+                                "id": 17,
+                                "name": "Upfront Fee Payment From",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            },
+                            {
+                                "id": 18,
+                                "name": "Borrower/Agent",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            },
+                            {
+                                "id": 19,
+                                "name": "Upfront Fee Pricing Change",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            }
+                        ],
+                        "createdOn": 1513580591605
+                    },
+                    {
+                        "id": 20,
+                        "name": "Paperclip",
+                        "lowSLA": 1,
+                        "averageSLA": 2,
+                        "highSLA": 3,
+                        "weight": 10,
+                        "isFieldExpanded": false,
+                        "isSelected": false,
+                        "isActive": true,
+                        "children": [
+                            {
+                                "id": 21,
+                                "name": "Paper Clip Transaction",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            }
+                        ],
+                        "createdOn": 1513580591605
+                    },
+                    {
+                        "id": 22,
+                        "name": "Pricing Change",
+                        "lowSLA": 1,
+                        "averageSLA": 2,
+                        "highSLA": 3,
+                        "weight": 10,
+                        "isFieldExpanded": false,
+                        "isSelected": false,
+                        "isActive": true,
+                        "children": [
+                            {
+                                "id": 23,
+                                "name": "Pricing-Agent Bk Advise Reqd",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            },
+                            {
+                                "id": 24,
+                                "name": "Pricing-Future Change Reqd",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            },
+                            {
+                                "id": 25,
+                                "name": "Pricing Verfied-Updated",
+                                "lowSLA": 1,
+                                "averageSLA": 2,
+                                "highSLA": 3,
+                                "weight": 10,
+                                "isFieldExpanded": false,
+                                "isSelected": false,
+                                "isActive": true,
+                                "children": [],
+                                "createdOn": 1513580591605
+                            }
+                        ],
+                        "createdOn": 1513580591605
+                    }
+                ],
+                "createdOn": 1513580591605
+            },
+            {
+                "id": 26,
+                "name": "Deal Termination",
+                "lowSLA": 1,
+                "averageSLA": 2,
+                "highSLA": 3,
+                "weight": 10,
+                "isFieldExpanded": false,
+                "isSelected": false,
+                "isActive": true,
+                "children": [],
+                "createdOn": 1513580591605
+            },
+            {
+                "id": 27,
+                "name": "Document Tracking & Maintenance",
+                "lowSLA": 1,
+                "averageSLA": 2,
+                "highSLA": 3,
+                "weight": 10,
+                "isFieldExpanded": false,
+                "isSelected": false,
+                "isActive": true,
+                "children": [],
+                "createdOn": 1513580591605
+            }
+        ]
+    }
+]

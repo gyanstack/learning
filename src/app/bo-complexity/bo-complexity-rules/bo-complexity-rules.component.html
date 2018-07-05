@@ -1,0 +1,45 @@
+<div>
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <label class="heading">Complexity Rules</label>
+    </div>
+  </div>
+  <div>
+    <!-- <ng-container *ngIf="node.children">
+          <ng-container *ngFor="let child of node.children">
+              <a routerLink="/processhierarchy/{{child.id}}"> {{ child.name }}</a>
+          </ng-container>
+      </ng-container>  -->
+
+    <div class="example-container mat-table-container">
+      <mat-table #table [dataSource]="dataSource">
+
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef class="tabHeading"> BO Type </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <a style="cursor: pointer" (click)="openRule(element)"> {{element.type}}</a>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="isRuleDefined">
+          <mat-header-cell *matHeaderCellDef class="tabHeading"> Formula </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.isRuleDefined === 'true'">
+              <span>
+                <img src="assets/images/img-confirm-formula.png">
+              </span>
+            </ng-container>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "codeKey": "InterCompany_Deal_RiskTypes",
+        "codeValue": "'BMFT', 'BCPB', 'BLIF', 'BCML', 'BLIC', 'BCNT', 'BCBT', 'HABM', 'BMFW', 'BFIT', 'BGKS', 'BMCM', 'BNES', 'BMON', 'BUCC', 'BMOM', 'BMMC', 'BMIL', 'BMIS', 'HABF', 'GGFC', 'GCSC', 'HNCP', 'BMHA', 'MONH', 'CINC'"
+    },
+    {
+        "id": 2,
+        "codeKey": "CFD_AutoFinance_MisCodes",
+        "codeValue": "LBCFD"
+    },
+    {
+        "id": 3,
+        "codeKey": "Sweep_To_Loan_MisTypes",
+        "codeValue": "'SWPBR, 'SWSBR'"
+    }
+]

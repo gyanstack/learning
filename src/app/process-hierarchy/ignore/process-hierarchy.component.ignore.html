@@ -1,0 +1,39 @@
+<div style="float:left; width: 25%; height: 100%; background:lightblue ">
+        <tree-root [nodes]="processes" [options]="options">
+          <ng-template #treeNodeTemplate let-node let-index="index">
+            <div [class.tree-node]="true" [class.tree-node-expanded]="node.isExpanded && node.hasChildren" [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+              [class.tree-node-leaf]="node.isLeaf" [class.tree-node-active]="node.isActive" [class.tree-node-focused]="node.isFocused">
+              <!-- <tree-node-expander [node]="node"></tree-node-expander> -->
+              <a routerLink="/processhierarchy/{{node.data.id}}"> {{ node.data.name }}</a>
+            </div>
+          </ng-template>
+        </tree-root>
+        <tree-root id="tree2" [focused]="true" [nodes]="processes" [options]="options">
+          <ng-template #treeNodeFullTemplate let-node let-index="index" let-templates="templates">
+            <div [class.tree-node]="true" [class.tree-node-expanded]="node.isExpanded && node.hasChildren" [class.tree-node-collapsed]="node.isCollapsed && node.hasChildren"
+              [class.tree-node-leaf]="node.isLeaf" [class.tree-node-active]="node.isActive" [class.tree-node-focused]="node.isFocused">
+      
+              <!-- <input type="checkbox" [checked]="node.isActive" (change)="node.toggleActivated(true)" /> -->
+              <tree-node-expander [node]="node"></tree-node-expander>
+              <!-- <div class="node-content-wrapper" (click)="node.toggleActivated(true)"> -->
+              <!-- <span [class]="node.data.className + 'Index'">{{ index }}</span>
+                    <span [class]="node.data.className" [class.title]="true">{{ node.data.name }}</span> -->
+              <a routerLink="/processhierarchy/{{node.data.name}}"> {{ node.data.name }}</a>
+              <!-- </div> -->
+              <tree-node-children [node]="node" [templates]="templates"></tree-node-children>
+            </div>
+          </ng-template>
+        </tree-root>
+        <!-- <ul>
+          <ng-template #recursiveList let-list>
+            <li *ngFor="let process of list">
+              <a routerLink="/processhierarchy/{{process.name}}"> {{ process.name }}</a>
+              <ul *ngIf="process.childs.length > 0">
+                <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: process.childs }"></ng-container>
+              </ul>
+            </li>
+          </ng-template>
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: processes }"></ng-container>
+        </ul> -->
+      </div>
+      <router-outlet></router-outlet>

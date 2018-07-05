@@ -1,0 +1,70 @@
+.heading
+{
+    font-family: Candara, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #006699;    
+    font-weight: 600;
+}
+
+.colorDiv{
+    float:right; 
+    margin-top: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: black;    
+    font-weight: 600;
+}
+
+.colorDiv>div {
+    margin-right: 20px;
+}
+
+.box {
+    border: 1px solid #333333;
+    width: 10px;
+    height: 7px;
+    margin-top: 3px;
+    margin-right: 5px !important;
+}
+.box.rect {
+    width: 50px;
+}
+
+a.processNameLink {
+    padding-left: 15px;
+    background: url('../../../assets/images/img-row-move.png') no-repeat left 5px;
+}
+
+.SLAtitleTag {
+    /* width: 50px;
+    text-align: center;
+    margin-left: 55px; */
+}
+
+.SLAvaluesTag {
+    /* float: left; */
+    display: inline-block;
+    width:50px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.weightTag {
+    text-align: center;
+}
+
+.SLAheading {
+    text-align: center;
+}
+
+.SLAcolorBox{
+    text-align: center;
+}
+
+.SLAcolorBox .box.rect {
+    display: inline-block;
+}
+
+.SLAvalueBox{
+    text-align: center;
+}

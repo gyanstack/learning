@@ -1,0 +1,169 @@
+.pull-right {
+    float: right!important;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ctlHeader{
+	margin:10px;
+}
+.ctlHeader .action{
+    float: right;
+}
+.table{
+    width: 100%;
+    border: 1px solid;
+}
+.table thead{
+    background: lightskyblue;
+    text-align: left;
+}
+.table tr{
+    border: 1px solid;
+}
+.table th,.table td{
+    padding-left: 10px;
+}
+.table td{
+    border-top: 1px solid ;
+    line-height: 20px;
+}
+.deletebuttonClass{
+    background: #1A6995;
+    float: left;
+}
+
+.savebuttonClass{
+    background: #1A6995;
+    float: left;
+    margin-left: 60%;
+}
+    
+.cancelbuttonClass{    
+    float: left;
+    margin-left: 10px;
+}
+
+.heading
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #4DA3CF;    
+    font-weight: 600;
+}
+.footerAction{
+    float: right;
+}
+.thenActivity{
+    border-left: 1px dashed;
+    padding-left:10px;
+}
+.width-100{
+    width:100%;
+}
+
+
+/*eap starts*/
+
+.contentWrapper {
+    padding-top: 20px;
+  }
+  
+  .eapRuleSection {
+    border: solid 2px #9a9c9e;
+    margin: 15px 0;
+  }
+  
+  .eapRuleHead {
+    background: #1975a3;
+    padding: 7px 15px;
+    font: 16px/24px candara, arial;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .eapRules {
+    padding: 0 15px;
+  }
+  
+  .eapRules ul,
+  .eapRules li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .eapRules li {
+    /* padding: 5px 20px; */
+    padding: 12px 24px;
+    border-bottom: solid 1px #ddd;
+    position: relative;
+    min-height: 48px;
+  }
+  .eapRules li:first-child {
+    border-top: solid 0px #ddd;
+  }
+  .eapRules li span {
+    color: #106c9c;
+    font: bold 14px/20px arial;
+    text-decoration: underline;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+  }
+  
+  .eapRules li .rulesContent {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+  .eapRules li .rulesContent a{
+    cursor: pointer;
+  }
+  .rulesPopoverContent {
+    /* display: none; */
+    /* width: 90%; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    background: #494a4a;
+    font: 12px/20px arial;
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px;
+    top: 90%;
+    z-index: 999;
+  }
+  
+  .rulesPopoverContent:after {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 10px;
+    border: solid 7px #494a4a;
+    border-color: transparent transparent #494a4a transparent;
+  }
+
+  ::ng-deep .erpRuleForm .mat-input-wrapper{
+    width:490px !important;
+}
+  
+  /* .eapRules li:hover .rulesPopoverContent {
+    display: block;
+    position: absolute;
+    top: 5px;
+    background: #494a4a;
+    font: 12px/20px arial;
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px;
+    top: 90%;
+    z-index: 999;
+  } */  
+  
+  
+  

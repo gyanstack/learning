@@ -1,0 +1,234 @@
+[
+    {
+        "id": 1,
+        "name": "This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1This is Guided Rule #1",
+        "type": "GUIDED",
+        "definition": {
+            "condition": "and",
+            "rules": [
+                {
+                    "field": "boRefId",
+                    "operator": "<=",
+                    "isValid": true,
+                    "value": 34
+                },
+                {
+                    "field": "eventSource",
+                    "operator": "like",
+                    "isValid": true,
+                    "value": "Source 1"
+                },
+                {
+                    "condition": "or",
+                    "rules": [
+                        {
+                            "field": "eventName",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Event 1"
+                        },
+                        {
+                            "field": "eventType",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Type 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "activityId": 11,
+        "activityName": "",
+        "isStarted": true,
+        "isCompleted": true
+    },
+    {
+        "id": 2,
+        "name": "This is Guided Rule #2",
+        "type": "GUIDED",
+        "definition": {
+            "condition": "and",
+            "rules": [
+                {
+                    "field": "boRefId",
+                    "operator": "<=",
+                    "isValid": true,
+                    "value": 343
+                },
+                {
+                    "field": "eventSource",
+                    "operator": "like",
+                    "isValid": true,
+                    "value": "Source 1"
+                },
+                {
+                    "condition": "or",
+                    "rules": [
+                        {
+                            "field": "eventName",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Event 1"
+                        },
+                        {
+                            "field": "eventType",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Type 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "activityId": 12,
+        "activityName": "",
+        "isStarted": true,
+        "isCompleted": false
+    },
+    {
+        "id": 3,
+        "name": "This is Guided Rule #3",
+        "type": "GUIDED",
+        "definition": {
+            "condition": "and",
+            "rules": [
+                {
+                    "field": "boRefId",
+                    "operator": "<=",
+                    "isValid": true,
+                    "value": 3434
+                },
+                {
+                    "field": "eventSource",
+                    "operator": "like",
+                    "isValid": true,
+                    "value": "Source 1"
+                },
+                {
+                    "condition": "or",
+                    "rules": [
+                        {
+                            "field": "eventName",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Event 1"
+                        },
+                        {
+                            "field": "eventType",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Type 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "activityId": 15,
+        "activityName": "",
+        "isStarted": false,
+        "isCompleted": true
+    },
+    {
+        "id": 4,
+        "name": "This is Guided Rule #4",
+        "type": "GUIDED",
+        "definition": {
+            "condition": "and",
+            "rules": [
+                {
+                    "field": "boRefId",
+                    "operator": "<=",
+                    "isValid": true,
+                    "value": 34343
+                },
+                {
+                    "field": "eventSource",
+                    "operator": "like",
+                    "isValid": true,
+                    "value": "Source 1"
+                },
+                {
+                    "condition": "or",
+                    "rules": [
+                        {
+                            "field": "eventName",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Event 1"
+                        },
+                        {
+                            "field": "eventType",
+                            "operator": "like",
+                            "isValid": true,
+                            "value": "Type 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "activityId": 18,
+        "activityName": "",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 5,
+        "name": "This is Advance Rule #1",
+        "type": "ADVANCE",
+        "definition": "NAME IS LIKE '%Prasoon%' AND AGE>=35",
+        "activityId": 11,
+        "activityName": "Deal Maintenance Related Events",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 6,
+        "name": "This is Advance Rule #2",
+        "type": "ADVANCE",
+        "definition": "NAME IS LIKE '%Abhinaw%' AND AGE>=25",
+        "activityId": 11,
+        "activityName": "Borrower/Agent",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 7,
+        "name": "This is Advance Rule #3",
+        "type": "ADVANCE",
+        "definition": "NAME IS LIKE '%Prasoon%' AND AGE>=35",
+        "activityId": 12,
+        "activityName": "Paper Clip Transaction",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 8,
+        "name": "This is Advance Rule #4",
+        "type": "ADVANCE",
+        "definition": "NAME IS LIKE '%Prasoon%' AND AGE>=35",
+        "activityId": 12,
+        "activityName": "Pricing-Agent Bk Advise ",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 9,
+        "name": "This is Advance Rule #5",
+        "type": "ADVANCE",
+        "definition": "DEPT LIKE 'SOFTWARE' AND NAME IS LIKE '%Prasoon%' AND AGE>=35",
+        "activityId": 15,
+        "activityName": "Paper Clip Transaction",
+        "isStarted": false,
+        "isCompleted": false
+    },
+    {
+        "id": 10,
+        "name": "This is Advance Rule #6",
+        "type": "ADVANCE",
+        "definition": "COMPANY  IS 'IRIS' AND NAME IS LIKE '%Prasoon%' AND AGE>=35",
+        "activityId": 18,
+        "activityName": "Pricing-Agent Bk Advise ",
+        "isStarted": false,
+        "isCompleted": false
+    }
+]

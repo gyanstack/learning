@@ -1,0 +1,242 @@
+{
+    "boType": {
+        "type": "Deal"
+    },
+    "replacers": [
+        {
+            "id": 1,
+            "replacerName": "FINAL_RANGE_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 2,
+            "replacerName": "FINAL_RANGE_AVERAGE_TOP_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 3,
+            "replacerName": "BORROWERS_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 3
+        },
+        {
+            "id": 4,
+            "replacerName": "BORROWERS_AVERAGE_TOP_VALUE",
+            "replacerValue": 4
+        },
+        {
+            "id": 5,
+            "replacerName": "LENDERS_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 5
+        },
+        {
+            "id": 6,
+            "replacerName": "LENDERS_AVERAGE_TOP_VALUE",
+            "replacerValue": 6
+        },
+        {
+            "id": 7,
+            "replacerName": "FACILITIES_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 7
+        },
+        {
+            "id": 8,
+            "replacerName": "FACILITIES_AVERAGE_TOP_VALUE",
+            "replacerValue": 8
+        },
+        {
+            "id": 9,
+            "replacerName": "MULTICURRENCY_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 9
+        },
+        {
+            "id": 10,
+            "replacerName": "MULTICURRENCY_AVERAGE_TOP_VALUE",
+            "replacerValue": 10
+        },
+        {
+            "id": 11,
+            "replacerName": "PRICING_OPTION_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 11
+        },
+        {
+            "id": 12,
+            "replacerName": "PRICING_OPTION_AVERAGE_TOP_VALUE",
+            "replacerValue": 12
+        },
+        {
+            "id": 13,
+            "replacerName": "RISKTYPE_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 13
+        },
+        {
+            "id": 14,
+            "replacerName": "RISKTYPE_AVERAGE_TOP_VALUE",
+            "replacerValue": 14
+        },
+        {
+            "id": 15,
+            "replacerName": "SUBLIMITS_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 15
+        },
+        {
+            "id": 16,
+            "replacerName": "SUBLIMITS_AVERAGE_TOP_VALUE",
+            "replacerValue": 16
+        },
+        {
+            "id": 17,
+            "replacerName": "LOAN_WITH_REPAYMENT_SCHEDULE_AVERAGE_BOTTOM_VALUE",
+            "replacerValue": 17
+        },
+        {
+            "id": 18,
+            "replacerName": "LOAN_WITH_REPAYMENT_SCHEDULE_AVERAGE_TOP_VALUE",
+            "replacerValue": 18
+        },
+        {
+            "id": 19,
+            "replacerName": "DEALTYPE_SOLELENDER_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 20,
+            "replacerName": "DEALTYPE_OTHERBANKAGENT_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 21,
+            "replacerName": "DEALTYPE_INTERCOMPANYDEALS_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 22,
+            "replacerName": "DEALTYPE_BMOAGENCY_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 23,
+            "replacerName": "PRODUCT_TYPES_CFDAUTO_FINANCE_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 24,
+            "replacerName": "PRODUCT_TYPES_CCLODEALERSHIPFINANCE_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 25,
+            "replacerName": "PRODUCT_TYPES_CCLOREALESTATE_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 26,
+            "replacerName": "PRODUCT_TYPES_TRADING_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 27,
+            "replacerName": "PRODUCT_TYPES_OVERDRAFTLINE_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 28,
+            "replacerName": "PRODUCT_TYPES_PRIMEREVENUE_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 29,
+            "replacerName": "PRODUCT_TYPES_SWEEPTOLOAN_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 30,
+            "replacerName": "PRODUCT_TYPES_OLBB_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 31,
+            "replacerName": "PRODUCT_TYPES_CONSTRUCTION_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 32,
+            "replacerName": "PRODUCT_TYPES_BROKER_VALUE",
+            "replacerValue": 0
+        },
+        {
+            "id": 33,
+            "replacerName": "PRODUCT_TYPES_CFDABL_VALUE",
+            "replacerValue": 1
+        },
+        {
+            "id": 34,
+            "replacerName": "PRODUCT_TYPES_CCLOABL_VALUE",
+            "replacerValue": 2
+        },
+        {
+            "id": 35,
+            "replacerName": "SEGMENT_GROUP_NAME_CODES_LOW_VALUE",
+            "replacerValue": "'CFD Diversified Industries','CFD Media'"
+        },
+        {
+            "id": 36,
+            "replacerName": "SEGMENT_GROUP_NAME_CODES_AVERAGE_VALUE",
+            "replacerValue": "'CFD Real Estate'"
+        },
+        {
+            "id": 37,
+            "replacerName": "SEGMENT_GROUP_NAME_CODES_HIGH_VALUE",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 38,
+            "replacerName": "DEAL_TYPES_INTERCOMPANY_DEALS_RISK_TYPES_VALUE",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 39,
+            "replacerName": "PRODUCT_TYPES_CFD_AUTO_FINANACE_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 39,
+            "replacerName": "PRODUCT_TYPES_CCLO_DEALERSHIP_FINANACE_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 40,
+            "replacerName": "PRODUCT_TYPES_PRIME_REVENUE_INTEGRATION_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 41,
+            "replacerName": "PRODUCT_TYPES_SWEEP_TO_LOAN_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 42,
+            "replacerName": "PRODUCT_TYPES_OLBB_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 43,
+            "replacerName": "PRODUCT_TYPES_CFDABL_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 44,
+            "replacerName": "PRODUCT_TYPES_CCLOABL_MIS_CODES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 45,
+            "replacerName": "PRODUCT_TYPES_OVERDRAFT_RISK_TYPES",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        },
+        {
+            "id": 46,
+            "replacerName": "PRODUCT_TYPES_PRICING_OPTIONS",
+            "replacerValue": "'CFD BMO Capital Partner'"
+        }
+    ]
+}

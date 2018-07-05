@@ -1,0 +1,38 @@
+.deletebuttonClass{
+    background: #1A6995;
+    float: left;
+}
+
+.savebuttonClass{
+    background: #1A6995;
+    float: left;
+    margin-left: 40%;
+}
+
+.cancelbuttonClass{    
+    float: left;
+    margin-left: 10px;
+}
+
+.heading
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #32AAE7;    
+    font-weight: 600;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+                
+  .errorInput{
+    border:1px solid red;
+  }

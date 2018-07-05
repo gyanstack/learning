@@ -1,0 +1,1091 @@
+<!--Breadcrumb-->
+<div class="row cclBreadcrumb">
+  <div class="col-md-3 breadcrumbLeft">
+    OTHERS
+    <i class="breadcrumbIcon">
+      <img src="assets/images/img-trans-upload.png">
+    </i>
+  </div>
+  <div class="col-md-9 headWrapper">
+    <h2>Deal/Facility Complexity Factors</h2>
+  </div>
+</div>
+<div class="container-fluid contentWrapper" appAutoHeight>
+  <!-- <div class="row">
+      <div class="col-md-12 header-border">
+        <h1>Deal/Facility Complexity Model</h1>
+      </div>
+  
+    </div> -->
+  <form [formGroup]="codesDetailForm" class="form-row">
+    <div class="row">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-9 heading-text">
+        <h1>Range</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 first-header heading-text">Low</div>
+      <div class="col-md-3 first-header heading-text">Average</div>
+      <div class="col-md-3 first-header heading-text">High</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <div class="box-rect box-yellow"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="box-rect box-orange"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="box-rect box-red"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2 second-header heading-text">Bottom</div>
+          <div class="col-md-2 second-header heading-text">Top</div>
+          <div class="col-md-2 second-header heading-text">Bottom</div>
+          <div class="col-md-2 second-header heading-text">Top</div>
+          <div class="col-md-2 second-header heading-text">Bottom</div>
+          <div class="col-md-2 second-header heading-text">Top</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Final Range</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+finalRangeAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="finalRangeAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(finalRangeAverageBottomValue.dirty || finalRangeAverageBottomValue.touched) && (finalRangeAverageBottomValue.invalid || (+finalRangeAverageBottomValue.value > +finalRangeAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="finalRangeAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)??(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(finalRangeAverageTopValue.dirty || finalRangeAverageTopValue.touched) && (finalRangeAverageTopValue.invalid || (+finalRangeAverageBottomValue.value > +finalRangeAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+finalRangeAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of borrowers</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+borrowersAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="borrowersAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(borrowersAverageBottomValue.dirty || borrowersAverageBottomValue.touched) && (borrowersAverageBottomValue.invalid || (+borrowersAverageBottomValue.value > +borrowersAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="borrowersAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(borrowersAverageTopValue.dirty || borrowersAverageTopValue.touched) && (borrowersAverageTopValue.invalid || (+borrowersAverageBottomValue.value > +borrowersAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+borrowersAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of lenders</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+lendersAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="lendersAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(lendersAverageBottomValue.dirty || lendersAverageBottomValue.touched) && (lendersAverageBottomValue.invalid || (+lendersAverageBottomValue.value > +lendersAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="lendersAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(lendersAverageTopValue.dirty || lendersAverageTopValue.touched) && (lendersAverageTopValue.invalid || (+lendersAverageBottomValue.value > +lendersAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+lendersAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of facilities</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+facilitiesAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="facilitiesAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(facilitiesAverageBottomValue.dirty || facilitiesAverageBottomValue.touched) && (facilitiesAverageBottomValue.invalid || (+facilitiesAverageBottomValue.value > +facilitiesAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="facilitiesAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(facilitiesAverageTopValue.dirty || facilitiesAverageTopValue.touched) && (facilitiesAverageTopValue.invalid || (+facilitiesAverageBottomValue.value > +facilitiesAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+facilitiesAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Multi-currency</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+multiCurrencyAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="multiCurrencyAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(multiCurrencyAverageBottomValue.dirty || multiCurrencyAverageBottomValue.touched) && (multiCurrencyAverageBottomValue.invalid || (+multiCurrencyAverageBottomValue.value > +multiCurrencyAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="multiCurrencyAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(multiCurrencyAverageTopValue.dirty || multiCurrencyAverageTopValue.touched) && (multiCurrencyAverageTopValue.invalid || (+multiCurrencyAverageBottomValue.value > +multiCurrencyAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+multiCurrencyAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of pricing option</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+pricingOptionAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="pricingOptionAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(pricingOptionAverageBottomValue.dirty || pricingOptionAverageBottomValue.touched) && (pricingOptionAverageBottomValue.invalid || (+pricingOptionAverageBottomValue.value > +pricingOptionAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="pricingOptionAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(pricingOptionAverageTopValue.dirty || pricingOptionAverageTopValue.touched) && (pricingOptionAverageTopValue.invalid || (+pricingOptionAverageBottomValue.value > +pricingOptionAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+pricingOptionAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of risk type</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+riskTypeAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="riskTypeAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(riskTypeAverageBottomValue.dirty || riskTypeAverageBottomValue.touched) && (riskTypeAverageBottomValue.invalid || (+riskTypeAverageBottomValue.value > +riskTypeAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="riskTypeAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(riskTypeAverageTopValue.dirty || riskTypeAverageTopValue.touched) && (riskTypeAverageTopValue.invalid || (+riskTypeAverageBottomValue.value > +riskTypeAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+riskTypeAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of sublimits</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+sublimitsAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="sublimitsAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(sublimitsAverageBottomValue.dirty || sublimitsAverageBottomValue.touched) && (sublimitsAverageBottomValue.invalid || (+sublimitsAverageBottomValue.value > +sublimitsAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="sublimitsAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(sublimitsAverageTopValue.dirty || sublimitsAverageTopValue.touched) && (sublimitsAverageTopValue.invalid || (+sublimitsAverageBottomValue.value > +sublimitsAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+sublimitsAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 codes-labels"># of Loans with Repayment Schedule</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="{{+loanWithRepaymentScheduleAverageBottomValue.value - 1}}" [disabled]=true type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="loanWithRepaymentScheduleAverageBottomValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(loanWithRepaymentScheduleAverageBottomValue.dirty || loanWithRepaymentScheduleAverageBottomValue.touched) && (loanWithRepaymentScheduleAverageBottomValue.invalid || (+loanWithRepaymentScheduleAverageBottomValue.value > +loanWithRepaymentScheduleAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" formControlName="loanWithRepaymentScheduleAverageTopValue" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+              [ngClass]="{'errorInput':(loanWithRepaymentScheduleAverageTopValue.dirty || loanWithRepaymentScheduleAverageTopValue.touched) && (loanWithRepaymentScheduleAverageTopValue.invalid || (+loanWithRepaymentScheduleAverageBottomValue.value > +loanWithRepaymentScheduleAverageTopValue.value))}"
+              type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" [disabled]=true value="{{+loanWithRepaymentScheduleAverageTopValue.value + 1}}" type="text">
+          </div>
+          <div class="col-md-2">
+            <input class="form-control" value="*" [disabled]=true type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Deal Type</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeSoleLenderValue.value === oneValue" (change)="changeCheckBox($event,'dealTypeSoleLenderValue', oneValue)"
+                class="chkbox">Sole Lender</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeOtherBankAgentValue.value === oneValue" (change)="changeCheckBox($event,'dealTypeOtherBankAgentValue', oneValue)"
+                class="chkbox">Other bank Agent</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeIntercompanyDealsValue.value === oneValue" (change)="changeCheckBox($event,'dealTypeIntercompanyDealsValue', oneValue)"
+                class="chkbox">Intercompany Deals</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeBMOagencyValue.value === oneValue" (change)="changeCheckBox($event,'dealTypeBMOagencyValue', oneValue)"
+                class="chkbox">BMO Agency</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeSoleLenderValue.value === twoValue" (change)="changeCheckBox($event,'dealTypeSoleLenderValue', twoValue)"
+                class="chkbox">Sole Lender</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeOtherBankAgentValue.value === twoValue" (change)="changeCheckBox($event,'dealTypeOtherBankAgentValue', twoValue)"
+                class="chkbox">Other bank Agent</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeIntercompanyDealsValue.value === twoValue" (change)="changeCheckBox($event,'dealTypeIntercompanyDealsValue', twoValue)"
+                class="chkbox">Intercompany Deals</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeBMOagencyValue.value === twoValue" (change)="changeCheckBox($event,'dealTypeBMOagencyValue', twoValue)"
+                class="chkbox">BMO Agency</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeSoleLenderValue.value === threeValue" (change)="changeCheckBox($event,'dealTypeSoleLenderValue', threeValue)"
+                class="chkbox">Sole Lender</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeOtherBankAgentValue.value === threeValue" (change)="changeCheckBox($event,'dealTypeOtherBankAgentValue', threeValue)"
+                class="chkbox">Other bank Agent</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeIntercompanyDealsValue.value === threeValue" (change)="changeCheckBox($event,'dealTypeIntercompanyDealsValue', threeValue)"
+                class="chkbox">Intercompany Deals</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealTypeBMOagencyValue.value === threeValue" (change)="changeCheckBox($event,'dealTypeBMOagencyValue', threeValue)"
+                class="chkbox">BMO Agency</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Product Types</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDAutoFinanceValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCFDAutoFinanceValue', oneValue)"
+                class="chkbox">CFD Auto Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLODealershipFinanceValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCCLODealershipFinanceValue', oneValue)"
+                class="chkbox">CCLO Dealership Finance</mat-checkbox>
+            </div>
+            <!-- <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLORealeStateValue.value === lowValue" (change)="changeCheckBox($event,'productTypesCCLORealeStateValue', lowValue)"
+                class="chkbox">CCLO Real Estate</mat-checkbox>
+            </div> -->
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradingValue.value === oneValue" (change)="changeCheckBox($event,'productTypesTradingValue', oneValue)"
+                class="chkbox">Trading</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOverdraftLineValue.value === oneValue" (change)="changeCheckBox($event,'productTypesOverdraftLineValue', oneValue)"
+                class="chkbox">Overdraft Line</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesPrimeRevenueIntegrationValue.value === oneValue" (change)="changeCheckBox($event,'productTypesPrimeRevenueIntegrationValue', oneValue)"
+                class="chkbox">Prime Revenue Integration</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSweeptoLoanValue.value === oneValue" (change)="changeCheckBox($event,'productTypesSweeptoLoanValue', oneValue)"
+                class="chkbox">Sweep to Loan</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOLBBValue.value === oneValue" (change)="changeCheckBox($event,'productTypesOLBBValue', oneValue)"
+                class="chkbox">OLBB</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionValue.value === oneValue" (change)="changeCheckBox($event,'productTypesConstructionValue', oneValue)"
+                class="chkbox">Construction</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesBrokerValue.value === oneValue" (change)="changeCheckBox($event,'productTypesBrokerValue', oneValue)"
+                class="chkbox">Broker</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDABLValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCFDABLValue', oneValue)"
+                class="chkbox">CFD ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOABLValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCCLOABLValue', oneValue)"
+                class="chkbox">CCLO ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOInventoryFinanceValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCCLOInventoryFinanceValue', oneValue)"
+                class="chkbox">CCLO Inventory Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesFlooringValue.value === oneValue" (change)="changeCheckBox($event,'productTypesFlooringValue', oneValue)"
+                class="chkbox">Flooring</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionAadminCartCLCSManagedValue.value === oneValue" (change)="changeCheckBox($event,'productTypesConstructionAadminCartCLCSManagedValue', oneValue)"
+                class="chkbox">Construction Admin(Cart), CLCS Managed</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradeFinanceValue.value === oneValue" (change)="changeCheckBox($event,'productTypesTradeFinanceValue', oneValue)"
+                class="chkbox">Trade Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSupplyChainValue.value === oneValue" (change)="changeCheckBox($event,'productTypesSupplyChainValue', oneValue)"
+                class="chkbox">Supply Chain</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCommercialMortgageValue.value === oneValue" (change)="changeCheckBox($event,'productTypesCommercialMortgageValue', oneValue)"
+                class="chkbox">Commercial Mortgage</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDAutoFinanceValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCFDAutoFinanceValue', twoValue)"
+                class="chkbox">CFD Auto Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLODealershipFinanceValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCCLODealershipFinanceValue', twoValue)"
+                class="chkbox">CCLO Dealership Finance</mat-checkbox>
+            </div>
+            <!-- <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLORealeStateValue.value === averageValue" (change)="changeCheckBox($event,'productTypesCCLORealeStateValue', averageValue)"
+                class="chkbox">CCLO Real Estate</mat-checkbox>
+            </div> -->
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradingValue.value === twoValue" (change)="changeCheckBox($event,'productTypesTradingValue', twoValue)"
+                class="chkbox">Trading</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOverdraftLineValue.value === twoValue" (change)="changeCheckBox($event,'productTypesOverdraftLineValue', twoValue)"
+                class="chkbox">Overdraft Line</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesPrimeRevenueIntegrationValue.value === twoValue" (change)="changeCheckBox($event,'productTypesPrimeRevenueIntegrationValue', twoValue)"
+                class="chkbox">Prime Revenue Integration</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSweeptoLoanValue.value === twoValue" (change)="changeCheckBox($event,'productTypesSweeptoLoanValue', twoValue)"
+                class="chkbox">Sweep to Loan</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOLBBValue.value === twoValue" (change)="changeCheckBox($event,'productTypesOLBBValue', twoValue)"
+                class="chkbox">OLBB</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionValue.value === twoValue" (change)="changeCheckBox($event,'productTypesConstructionValue', twoValue)"
+                class="chkbox">Construction</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesBrokerValue.value === twoValue" (change)="changeCheckBox($event,'productTypesBrokerValue', twoValue)"
+                class="chkbox">Broker</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDABLValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCFDABLValue', twoValue)"
+                class="chkbox">CFD ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOABLValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCCLOABLValue', twoValue)"
+                class="chkbox">CCLO ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOInventoryFinanceValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCCLOInventoryFinanceValue', twoValue)"
+                class="chkbox">CCLO Inventory Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesFlooringValue.value === twoValue" (change)="changeCheckBox($event,'productTypesFlooringValue', twoValue)"
+                class="chkbox">Flooring</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionAadminCartCLCSManagedValue.value === twoValue" (change)="changeCheckBox($event,'productTypesConstructionAadminCartCLCSManagedValue', twoValue)"
+                class="chkbox">Construction Admin(Cart), CLCS Managed</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradeFinanceValue.value === twoValue" (change)="changeCheckBox($event,'productTypesTradeFinanceValue', twoValue)"
+                class="chkbox">Trade Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSupplyChainValue.value === twoValue" (change)="changeCheckBox($event,'productTypesSupplyChainValue', twoValue)"
+                class="chkbox">Supply Chain</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCommercialMortgageValue.value === twoValue" (change)="changeCheckBox($event,'productTypesCommercialMortgageValue', twoValue)"
+                class="chkbox">Commercial Mortgage</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDAutoFinanceValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCFDAutoFinanceValue', threeValue)"
+                class="chkbox">CFD Auto Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLODealershipFinanceValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCCLODealershipFinanceValue', threeValue)"
+                class="chkbox">CCLO Dealership Finance</mat-checkbox>
+            </div>
+            <!-- <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLORealeStateValue.value === highValue" (change)="changeCheckBox($event,'productTypesCCLORealeStateValue', highValue)"
+                class="chkbox">CCLO Real Estate</mat-checkbox>
+            </div> -->
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradingValue.value === threeValue" (change)="changeCheckBox($event,'productTypesTradingValue', threeValue)"
+                class="chkbox">Trading</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOverdraftLineValue.value === threeValue" (change)="changeCheckBox($event,'productTypesOverdraftLineValue', threeValue)"
+                class="chkbox">Overdraft Line</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesPrimeRevenueIntegrationValue.value === threeValue" (change)="changeCheckBox($event,'productTypesPrimeRevenueIntegrationValue', threeValue)"
+                class="chkbox">Prime Revenue Integration</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSweeptoLoanValue.value === threeValue" (change)="changeCheckBox($event,'productTypesSweeptoLoanValue', threeValue)"
+                class="chkbox">Sweep to Loan</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesOLBBValue.value === threeValue" (change)="changeCheckBox($event,'productTypesOLBBValue', threeValue)"
+                class="chkbox">OLBB</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionValue.value === threeValue" (change)="changeCheckBox($event,'productTypesConstructionValue', threeValue)"
+                class="chkbox">Construction</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesBrokerValue.value === threeValue" (change)="changeCheckBox($event,'productTypesBrokerValue', threeValue)"
+                class="chkbox">Broker</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCFDABLValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCFDABLValue', threeValue)"
+                class="chkbox">CFD ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOABLValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCCLOABLValue', threeValue)"
+                class="chkbox">CCLO ABL</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCCLOInventoryFinanceValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCCLOInventoryFinanceValue', threeValue)"
+                class="chkbox">CCLO Inventory Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesFlooringValue.value === threeValue" (change)="changeCheckBox($event,'productTypesFlooringValue', threeValue)"
+                class="chkbox">Flooring</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesConstructionAadminCartCLCSManagedValue.value === threeValue" (change)="changeCheckBox($event,'productTypesConstructionAadminCartCLCSManagedValue', threeValue)"
+                class="chkbox">Construction Admin(Cart), CLCS Managed</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesTradeFinanceValue.value === threeValue" (change)="changeCheckBox($event,'productTypesTradeFinanceValue', threeValue)"
+                class="chkbox">Trade Finance</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesSupplyChainValue.value === threeValue" (change)="changeCheckBox($event,'productTypesSupplyChainValue', threeValue)"
+                class="chkbox">Supply Chain</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+productTypesCommercialMortgageValue.value === threeValue" (change)="changeCheckBox($event,'productTypesCommercialMortgageValue', threeValue)"
+                class="chkbox">Commercial Mortgage</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Cross Border</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderYesValue.value === oneValue" (change)="changeCheckBox($event,'crossBorderYesValue', oneValue)"
+                class="chkbox">Yes</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderNoValue.value === oneValue" (change)="changeCheckBox($event,'crossBorderNoValue', oneValue)"
+                class="chkbox">No</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderYesValue.value === twoValue" (change)="changeCheckBox($event,'crossBorderYesValue', twoValue)"
+                class="chkbox">Yes</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderNoValue.value === twoValue" (change)="changeCheckBox($event,'crossBorderNoValue', twoValue)"
+                class="chkbox">No</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderYesValue.value === threeValue" (change)="changeCheckBox($event,'crossBorderYesValue', threeValue)"
+                class="chkbox">Yes</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+crossBorderNoValue.value === threeValue" (change)="changeCheckBox($event,'crossBorderNoValue', threeValue)"
+                class="chkbox">No</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Collateral</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralNoValue.value === zeroValue" (change)="changeCheckBox($event,'collateralNoValue', zeroValue)"
+                class="chkbox">No Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralBBCValue.value === zeroValue" (change)="changeCheckBox($event,'collateralBBCValue', zeroValue)"
+                class="chkbox">BBC Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralPrimaryValue.value === zeroValue" (change)="changeCheckBox($event,'collateralPrimaryValue', zeroValue)"
+                class="chkbox">Primary Collateral</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralNoValue.value === twoValue" (change)="changeCheckBox($event,'collateralNoValue', twoValue)"
+                class="chkbox">No Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralBBCValue.value === twoValue" (change)="changeCheckBox($event,'collateralBBCValue', twoValue)"
+                class="chkbox">BBC Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralPrimaryValue.value === twoValue" (change)="changeCheckBox($event,'collateralPrimaryValue', twoValue)"
+                class="chkbox">Primary Collateral</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralNoValue.value === threeValue" (change)="changeCheckBox($event,'collateralNoValue', threeValue)"
+                class="chkbox">No Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralBBCValue.value === threeValue" (change)="changeCheckBox($event,'collateralBBCValue', threeValue)"
+                class="chkbox">BBC Collateral</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+collateralPrimaryValue.value === threeValue" (change)="changeCheckBox($event,'collateralPrimaryValue', threeValue)"
+                class="chkbox">Primary Collateral</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Pricing formula in Interest Pricing</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingWithBaseAndSpreadValue.value === oneValue" (change)="changeCheckBox($event,'interestNormalPricingWithBaseAndSpreadValue', oneValue)"
+                class="chkbox">Normal Pricing with Base + Spread</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingFloorRateValue.value === oneValue" (change)="changeCheckBox($event,'interestNormalPricingFloorRateValue', oneValue)"
+                class="chkbox">Floor Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingCapRateValue.value === oneValue" (change)="changeCheckBox($event,'interestNormalPricingCapRateValue', oneValue)"
+                class="chkbox">Cap Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestPricingForMatrixPricingValue.value === oneValue" (change)="changeCheckBox($event,'interestPricingForMatrixPricingValue', oneValue)"
+                class="chkbox">Matrix Pricing condition</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingWithBaseAndSpreadValue.value === twoValue" (change)="changeCheckBox($event,'interestNormalPricingWithBaseAndSpreadValue', twoValue)"
+                class="chkbox">Normal Pricing with Base + Spread</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingFloorRateValue.value === twoValue" (change)="changeCheckBox($event,'interestNormalPricingFloorRateValue', twoValue)"
+                class="chkbox">Floor Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingCapRateValue.value === twoValue" (change)="changeCheckBox($event,'interestNormalPricingCapRateValue', twoValue)"
+                class="chkbox">Cap Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestPricingForMatrixPricingValue.value === twoValue" (change)="changeCheckBox($event,'interestPricingForMatrixPricingValue', twoValue)"
+                class="chkbox">Matrix Pricing condition</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingWithBaseAndSpreadValue.value === threeValue" (change)="changeCheckBox($event,'interestNormalPricingWithBaseAndSpreadValue', threeValue)"
+                class="chkbox">Normal Pricing with Base + Spread</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingFloorRateValue.value === threeValue" (change)="changeCheckBox($event,'interestNormalPricingFloorRateValue', threeValue)"
+                class="chkbox">Floor Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestNormalPricingCapRateValue.value === threeValue" (change)="changeCheckBox($event,'interestNormalPricingCapRateValue', threeValue)"
+                class="chkbox">Cap Rate</mat-checkbox>
+            </div>
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+interestPricingForMatrixPricingValue.value === threeValue" (change)="changeCheckBox($event,'interestPricingForMatrixPricingValue', threeValue)"
+                class="chkbox">Matrix Pricing condition</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Deal Infrastructure</div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealInfraStrucureSAMUValue.value === zeroValue" (change)="changeCheckBox($event,'dealInfraStrucureSAMUValue', zeroValue)"
+                class="chkbox">SAMU</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealInfraStrucureSAMUValue.value === twoValue" (change)="changeCheckBox($event,'dealInfraStrucureSAMUValue', twoValue)"
+                class="chkbox">SAMU</mat-checkbox>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-checkbox color="theme-blue" [checked]="+dealInfraStrucureSAMUValue.value === threeValue" (change)="changeCheckBox($event,'dealInfraStrucureSAMUValue', threeValue)"
+                class="chkbox">SAMU</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Pricing Options</div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="pricingOptionsLowValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="pricingOptionsAverageValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="pricingOptionsHighValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-3 codes-labels">Segment Group Name - Description</div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="segmentGroupNameCodesLowValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="segmentGroupNameCodesAverageValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+      <div class="col-md-3">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="segmentGroupNameCodesHighValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row item-border"></div>
+    <div class="row">
+      <div class="col-md-12 first-header">
+        Other Settings
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels">Deal Type</div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Intercompany Deals:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="dealTypesIintercompanyDealsRiskTypesValue" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels">Product Types</div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">CFD Auto Finance:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesCFDAutoFinanaceMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">CCLO Dealership Finance:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesCCLODealershipFinanaceMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+        <div class="col-md-3 codes-labels"></div>
+        <div class="col-md-3">
+          <div class="row first-header">
+            <div class="col-md-12">CCLO Inventory Finance:</div>
+          </div>
+          <div class="row codes-labels">
+            <div class="col-md-12">Identified by MIS Codes</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+            formControlName="productTypesCCLOInventoryFinanceMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+        </div>
+      </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Prime Revenue Integration:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesPrimeRevenueIntegrationMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Sweep To Loan:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesSweepToLoanMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">OLBB:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesOLBBMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">CFDABL:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesCFDABLMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">CCLOABL:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by MIS Codes</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesCCLOABLMISCodes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">OverDraft:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesOverdraftRiskTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">OverDraft:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Picing Option</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesPricingOptions" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Flooring:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesFlooringRiskTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Construction:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Primary Collateral Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesConstructionPrimaryCollateralTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Construction Admin(Cart), CLCS Managed:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified in MIS types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesConstructionAadminCartCLCSManagedMISTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Trade Finance:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesTradeFinanceRiskTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Supply Chain:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesSupplyChainRiskTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-md-3 codes-labels"></div>
+      <div class="col-md-3">
+        <div class="row first-header">
+          <div class="col-md-12">Commercial Mortgage:</div>
+        </div>
+        <div class="row codes-labels">
+          <div class="col-md-12">Identified by Risk Types</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <textarea style="padding:10px; resize: none; background-color: #FAF9F9; box-shadow: inset 0 2px 5px #ccc;" matInput matTextareaAutosize
+          formControlName="productTypesCommercialMortgageRiskTypes" matAutosizeMinRows="3" matAutosizeMaxRows="3"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <!-- <button mat-raised-button color="theme-blue">Delete</button> -->
+      </div>
+      <div class="col-md-2">
+        <button mat-raised-button color="theme-blue" [disabled]="isProcessing" (click)="saveCodes()">Save</button>
+        <button mat-raised-button class="cancelbuttonClass" [disabled]="isProcessing" (click)="cancelUI()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

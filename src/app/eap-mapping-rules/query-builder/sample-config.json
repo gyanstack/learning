@@ -1,0 +1,44 @@
+    /*  Default rules and configuration of rules */
+  query = {
+      condition: 'and',
+      rules: [
+        {field: "age", operator: "<=", isValid:true},
+        {field: "name", operator: "like", isValid:true},
+        {field: "birthday", operator: ">=", isValid:true},
+        {
+          condition: 'or',
+          rules: [
+            {field: "gender", operator: "=", isValid:true},
+            {field: "occupation", operator: "in", isValid:true},
+            {field: "school", operator: "is null", isValid:true}
+          ]
+        }
+      ]
+    };
+  config: QueryBuilderConfig = {
+    fields: {
+      "age": { name: "Age", type: 'number' },
+      "gender": {
+        name: "Gender",
+        type: 'category',
+        options: [
+          { name: "Male", value: "m" },
+          { name: "Female", value: "f" }
+        ]
+      },
+      "name": { name: "Name", type: 'string' },
+      "educated": { name: "College Degree?", type: 'boolean' },
+      "birthday": { name: "Birthday", type: 'date' },
+      "school": { name: "School", type: 'string', nullable: true },
+      "occupation": {
+        name: "Occupation",
+        type: 'string',
+        options: [
+          { name: "Student", value: "student" },
+          { name: "Teacher", value: "teacher" },
+          { name: "Unemployed", value: "unemployed" },
+          { name: "Scientist", value: "scientist" }
+        ]
+      }
+    }
+  };

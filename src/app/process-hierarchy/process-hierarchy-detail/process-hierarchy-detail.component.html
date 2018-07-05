@@ -1,0 +1,157 @@
+<form [formGroup]="processDetailForm" class="form-row processDetailForm" appAutoHeight [setMaxHeight]=true>
+    <div class="padTop20">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="heading">Process Name</label>
+            </div>
+            <div class="col-md-5">
+                <label class="heading">SLA</label>
+            </div>
+            <div class="col-md-2">
+                <label class="heading">Weight</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <input formControlName="name" type="text" maxlength="250" class="form-control" [ngClass]="{'errorInput':name && ((name.value && name.value.trim() === '')|| name.invalid) && (name.dirty || name.touched)}"
+                    placeholder="Name" />
+            </div>
+            <div class="col-md-5 row no-gutters">
+                <div class="col-md-4">
+                    <!-- <input formControlName="lowSLA" id="lowSLA" type="number" class="form-control" 
+                    [ngClass]="{'errorInput':lowSLA.invalid && (lowSLA.dirty || lowSLA.touched) && 
+                    (lowSLA.errors.required || lowSLA.errors.NotNumber)}"
+                         placeholder="Low" required> -->
+                    <input formControlName="lowSLA" id="lowSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                        type="text" class="form-control" placeholder="Low" required>
+
+                    <!-- onKeyDown=" alert(this.value); alert(lowSLA.value); this.value = lowSLA.value; " -->
+                    <!-- onKeyUp="if(this.value>99){alert(window.event.keyCode);this.value='99';}else if(this.value < 0){this.value='0' ;} " -->
+                    <!-- if(lowSLA.value.match(/[0-9]*/)){return true;}  return false; -->
+                </div>
+                <div class="col-md-4">
+                    <!-- <input #testInput formControlName="averageSLA" type="number" class="form-control" 
+                    [ngClass]="{'errorInput':averageSLA.invalid && (averageSLA.dirty || averageSLA.touched) && 
+                    (averageSLA.errors.required || averageSLA.errors.NotNumber)}"
+                        placeholder="Average"> -->
+                    <input #testInput formControlName="averageSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                        type="text" class="form-control" placeholder="Average">
+                </div>
+                <div class="col-md-4">
+                    <!-- <input formControlName="highSLA" type="number" class="form-control" 
+                    [ngClass]="{'errorInput':highSLA.invalid && (highSLA.dirty || highSLA.touched) && 
+                    (highSLA.errors.required || highSLA.errors.NotNumber)}"
+                        placeholder="High"> -->
+                    <input formControlName="highSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                        type="text" class="form-control" placeholder="High">
+                </div>
+
+                <!-- <div class="col-md-12 small-hint">Leave empty if derived by summing children SLA's</div> -->
+
+            </div>
+            <div class="col-md-2">
+                <!-- <input formControlName="weight" type="number" class="form-control" [ngClass]="{'errorInput':weight.invalid && (weight.dirty || weight.touched) && (weight.errors.required || weight.errors.NotNumber)}" placeholder="Weight"> -->
+                <input formControlName="weight" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                    type="text" class="form-control" placeholder="Weight">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label class="heading">Add Sub Process / Activity</label>
+            </div>
+        </div>
+        <div formArrayName="childProcesses">
+            <div class="row" *ngFor="let process of childProcesses.controls; let i=index" [formGroupName]="i">
+                <!-- <input formControlName="id" type="text" class="form-control">
+                    <input formControlName="parentId" type="text" class="form-control"> -->
+                <div class="col-md-3">
+                    <input formControlName="name" maxlength="250" type="text" class="form-control" [ngClass]="{'errorInput':childProcesses.controls[i].controls.name && 
+                    ((childProcesses.controls[i].controls.name.value && childProcesses.controls[i].controls.name.value.trim() === '')|| childProcesses.controls[i].controls.name.invalid) && 
+                    (childProcesses.controls[i].controls.name.dirty || childProcesses.controls[i].controls.name.touched)}"
+                        placeholder="Name">
+                </div>
+                <div class="col-md-5 form-group row no-gutters">
+                    <div class="col-md-4">
+                        <!-- <input formControlName="lowSLA" type="number" class="form-control" [ngClass]="{'errorInput':childProcesses.controls[i].controls.lowSLA.invalid && 
+                        (childProcesses.controls[i].controls.lowSLA.dirty || childProcesses.controls[i].controls.lowSLA.touched) && 
+                        (childProcesses.controls[i].controls.lowSLA.errors.required || childProcesses.controls[i].controls.lowSLA.errors.NotNumber)}"
+                            placeholder="Low"> -->
+                        <input formControlName="lowSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                            type="text" class="form-control" placeholder="Low">
+                    </div>
+                    <div class="col-md-4">
+                        <!-- <input formControlName="averageSLA" type="number" class="form-control" [ngClass]="{'errorInput':childProcesses.controls[i].controls.averageSLA.invalid && 
+                        (childProcesses.controls[i].controls.averageSLA.dirty || childProcesses.controls[i].controls.averageSLA.touched) && 
+                        (childProcesses.controls[i].controls.averageSLA.errors.required || childProcesses.controls[i].controls.averageSLA.errors.NotNumber)}"
+                            placeholder="Average"> -->
+                        <input formControlName="averageSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                            type="text" class="form-control" placeholder="Average">
+                    </div>
+                    <div class="col-md-4">
+                        <!-- <input formControlName="highSLA" type="number" class="form-control" [ngClass]="{'errorInput':childProcesses.controls[i].controls.highSLA.invalid && 
+                        (childProcesses.controls[i].controls.highSLA.dirty || childProcesses.controls[i].controls.highSLA.touched) && 
+                        (childProcesses.controls[i].controls.highSLA.errors.required || childProcesses.controls[i].controls.highSLA.errors.NotNumber)}"
+                            placeholder="High"> -->
+                        <input formControlName="highSLA" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                            type="text" class="form-control" placeholder="High">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <!-- <input formControlName="weight" type="number" class="form-control" [ngClass]="{'errorInput':childProcesses.controls[i].controls.weight.invalid && 
+                        (childProcesses.controls[i].controls.weight.dirty || childProcesses.controls[i].controls.weight.touched) && 
+                        (childProcesses.controls[i].controls.weight.errors.required || childProcesses.controls[i].controls.weight.errors.NotNumber)}"
+                        placeholder="Weight"> -->
+                    <input formControlName="weight" onkeydown="if(event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 46){ return true;} if((this.value+event.key).match(/^(\d*)?(\.)?(\d*)?$/)){return true;} return false;"
+                        type="text" class="form-control" placeholder="Weight">
+                </div>
+                <div class="col-md-2">
+                    <ng-container *ngIf="i == 0">
+                        <!-- <button mat-icon-button color="success" [disabled]="!childProcesses.controls[i].valid" (click)="addProcess(i)">
+                            <mat-icon>add_circle_outline</mat-icon>
+                        </button> -->
+                        <button mat-icon-button color="success" (click)="addProcess(i)">
+                            <span matTooltip="Add Sub Process / Activity">
+                                <img src="assets/images/img-add.png">
+                            </span>
+                        </button>
+                    </ng-container>
+                    <ng-container *ngIf="i !== 0">
+                        <button mat-icon-button color="warn" (click)="removeProcess(i)">
+                            <span matTooltip="Remove Sub Process / Activity">
+                                <img src="assets/images/img-delete.png">
+                            </span>
+                        </button>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="row padTop20">
+            <!-- {{processDetailForm.status}}
+            {{processDetailForm.valid}} -->
+            <div class="col-md-6">
+                <button mat-raised-button color="theme-blue" [disabled]="!id || 0 > id.value || isProcessing" (click)="deleteProcess()">Delete Process Tree</button>
+            </div>
+            <div class="col-md-6 text-right">
+                <button mat-raised-button color="theme-blue" [disabled]="processDetailForm.pristine || isProcessing" (click)="saveProcess()">Save</button>
+                <button mat-raised-button class="cancelbuttonClass" [disabled]="isProcessing || (processDetailForm.pristine && !processDetailForm.touched)"
+                    (click)="cancelUI()">Cancel</button>
+            </div>
+        </div>
+
+        <div class="row padTop20">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+
+        <app-process-childs [SelctedNode]="childs"></app-process-childs>
+
+    </div>
+    <div class="padTop20"></div>
+</form>

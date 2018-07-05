@@ -1,0 +1,226 @@
+
+/* header */
+.cclHeader {
+    background: #fff url('../assets/images/bg_header.jpg') repeat-x;
+    height: 96px;
+}
+
+.cclNav {
+    background: #1d4e75;
+    height: 46px;
+    border-top: solid 2px #fff;
+    position: relative;
+    margin-top: 30px;
+}
+
+.cclNav:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 44px;
+    left: -15px;
+    top: 0;
+    transform: skew(-30deg, 0deg);
+    -ms-transform: skew(-30deg, 0deg);
+    -webkit-transform: skew(-30deg, 0deg);
+    background: #1d4e75;
+}
+
+.cclLogo{    
+    height: 60px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.cclLogo img{
+    width: 310px;
+    max-width: 100%;
+    height: auto;
+}
+
+.cclNav .navbar-nav>li>a {
+    color: #edf0f3;
+    font: bold 14px/20px arial;
+    padding: 13px 0 8px;
+    margin: 0 30px;
+    border-bottom: solid 3px #1d4e75;
+}
+
+.cclNav .navbar-nav>li>a:focus,
+.cclNav .navbar-nav>li>a:hover {
+    background: #1d4e75;
+    color: #e2e2e2;
+}
+
+.cclNav .navbar-nav>li.active>a {
+    border-bottom: solid 3px #ff0000;
+}
+
+.cclNav .nav .open>a,
+.cclNav .nav .open>a:focus,
+.cclNav .nav .open>a:hover {
+    background: #1d4e75;
+}
+
+.cclNav .dropdown:hover .dropdownNav{
+    display: block;
+}
+.cclNav .dropdownNav {
+    background: #dfe0e0;
+    color: #000;
+    position: absolute;
+    border-radius: 0;
+    font: bold 12px/20px arial;
+    padding: 3px;
+    left: -50%;
+}
+
+.cclNav .dropdownNav li {
+    display: block;
+    border-top: solid 1px #d0d0d0;
+}
+
+.cclNav .dropdownNav>li>a {
+    padding: 3px 8px;
+    margin: 3px 5px;
+    border-left: solid 3px transparent;
+}
+
+.cclNav .dropdownNav>li:first-child {
+    border-top: none;
+}
+
+.cclNav .dropdownNav>li>a:focus,
+.cclNav .dropdownNav>li>a:hover {
+    background: none;
+    color: #5f707f;
+}
+
+.cclNav .dropdownNav>.active>a {
+    background: none;
+    color: #5f707f;
+    border-left: solid 3px #ff0000;
+}
+
+/* header responsive start*/
+@media (min-width:768px) and (max-width:1279px){
+    .cclNav .navbar-nav>li>a{
+        margin: 0 10px;
+    }
+    .cclNav .dropdownNav{
+        right:0;
+        left:auto;
+    }
+}
+/* header responsive ends*/
+
+/* header ends */
+
+
+
+/*footer start */
+.cclFooter{
+    text-align: center;
+    background: #0079c1;
+    height: 55px;
+}
+.cclFooter ul, .cclFooter li { 
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+.cclFooter li{
+    display: inline-block;
+    margin: 20px 0;
+    padding:0 10px;
+    border-left:solid 2px #fff;
+    height: 16px;
+    line-height: 14px;
+}
+.cclFooter li a{
+    color: #fff;
+    font:bold 14px/16px corbel, arial;
+    
+}
+.cclFooter li:first-child{
+    border-left: none;
+}
+
+/*footer ends */
+
+
+.navmenu ul, .navmenu li {
+	margin: 0;
+	padding: 0;
+}
+.navmenu ul {
+	background: gray;
+	list-style: none;
+	width: 100%;
+}
+.navmenu li {
+	float: left;
+	position: relative;
+	width:auto;
+}
+.navmenu a {
+	background: #1A6995;
+	color: #FFFFFF;
+	display: block;
+	font: bold 12px/20px sans-serif;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.navmenu li:hover a {
+	background: #000000;
+}
+#submenu {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 35px;
+	visibility: hidden;
+	z-index: 1;
+}
+li:hover ul#submenu {
+	opacity: 1;
+	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
+	visibility: visible;
+}
+#submenu li {
+	float: none;
+	width: 100%;
+}
+#submenu a:hover {
+	background: #DF4B05;
+}
+#submenu a {
+	background-color:#000000;
+}
+
+.navdiv{
+	float:left; 
+	width: 100%;
+	background: #1A6995;
+	text-align: center;
+	padding-left: 20%;
+}
+
+
+.loading-overlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    -webkit-animation: loadingStart 3s 300ms linear 1 both;
+    -moz-animation: loadingStart 3s 300ms linear 1 both;
+    -o-animation: loadingStart 3s 300ms linear 1 both;
+    animation: loadingStart 3s 300ms linear 1 both;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}

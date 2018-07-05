@@ -1,0 +1,72 @@
+<div [formGroup]="fileUploadForm" class="col-md-6 col-md-offset-3">
+  <div class="form-group no-gutters">
+    <div class="col-md-3 text-right">
+      <label class="CstInputFileLable mat-raised-button mat-theme-blue" for="avatar">Browse</label>
+    </div>
+    <div class="col-md-6">
+      <input type="file" id="avatar" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+        class="CstInputFile" (change)="onFileChange($event)" #fileInput />
+      <label for="avatar" class="form-control CstInputFileArea">
+        <span *ngIf="fileInput.files.length == 0">Choose file...</span>
+        <span *ngIf="fileInput.files.length > 0">{{fileInput.files[0].name}}</span>
+      </label>
+    </div>
+    <div class="col-md-3">
+      <button type="button" mat-raised-button color="theme-grey" [disabled]="fileInput.files.length == 0" (click)="resetUI()">clear file</button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="enableTransactionDate === true">
+    <div class="form-group no-gutters">
+      <label class="control-label col-md-3">Transaction Date</label>
+      <div class="col-md-6">
+        <input matInput [matDatepicker]="picker" [matDatepickerFilter]="lastDayOfMonthFilter" class="form-control" formControlName="transactionDate"
+          placeholder="Choose a date" (focus)="picker.open()" (click)="picker.open()" readonly>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      <div class="col-md-3">
+        <label class="date-control-icon" (click)="picker.open()">&nbsp;</label>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="form-group no-gutters">
+    <label class="control-label col-md-3"></label>
+    <div class="col-md-9">
+      <button type="submit" [disabled]="fileInput.files.length == 0 || isProcessing" (click)="onSubmit()" mat-raised-button color="theme-blue">Submit
+      </button>
+    </div>
+  </div>
+</div>
+<div class="uploadMessage">
+  <ng-container *ngIf="isFileUploaded && isFileUploaded.value === true">
+    <div class="col-md-12 alert alert-success">{{fileUploadedMessage.value}}</div>
+  </ng-container>
+
+  <ng-container *ngIf="isFileUploaded && isFileUploaded.value === false">
+    <div class="col-md-12 alert alert-danger">{{fileUploadedMessage.value}}</div>
+    <div class="row">
+      <section class="col-md-12">
+        <div class="errorSection">
+          <div class="errorHead alert-danger">
+            Errors
+          </div>
+          <ul class="errors">
+            <li *ngFor="let error of errors">
+              <div class="rulesContent">
+                <span (mouseover)='error.errorHover=true' (mouseleave)='error.errorHover=false'>
+                  {{error}}
+                </span>
+              </div>
+              <div *ngIf="error.errorHover" class="rulesPopoverContent">
+                {{error}}
+              </div>
+            </li>
+          </ul>
+          <mat-paginator #paginator [length]="serviceErrors.errors.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" (page)="pageEvent = setPaginator($event)">
+          </mat-paginator>
+        </div>
+      </section>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,185 @@
+/* ul{ 
+    list-style-type: none; 
+    margin-left: -6px;
+} 
+.activityRoot{
+    min-width: 200px;
+    height: 300px;
+    overflow: scroll;
+}
+.selectItem{
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+.activeActivity{
+    color: -webkit-link !important;
+} */
+
+
+
+/*activity css*/
+.activitiesBox {
+    background: #FAF9F9;
+    padding: 10px;
+    border: solid 1px #C2C2C3;
+    max-height: calc(90vh - 355px);
+    overflow-y: auto;
+  }
+
+  @media (min-height:750px){
+    .activitiesBox {
+      background: #FAF9F9;
+      padding: 10px;
+      border: solid 1px #C2C2C3;
+      max-height: calc(90vh - 440px);
+      overflow-y: auto;
+    }
+  }
+  
+  .activitiesBox h4 {
+    font: bold 14px/20px arial;
+    color: #555556;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .activitiesBox ul,
+  .activitiesBox li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .activitiesBox ul li {
+    font-weight: bold;
+    margin: 3px 0 3px 10px;
+    font:bold 14px/16px candara, arial;
+  }
+
+  .activitiesBox ul li a {
+    font-weight: normal;
+    color:#000000de;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 0 2px -5px;
+    padding-left: 5px;
+  }
+  .activitiesBox ul li a:hover, .activitiesBox ul li a.activeActivity {
+    background: #eee;
+  }
+  .activitiesBox ul li a .selectedIcon {
+    display: none;
+  }
+  .activitiesBox ul li a.activeActivity .selectedIcon{
+    display: block;
+    float: left;
+    font-size: 16px;
+    color: #71BA09;
+    margin: 4px 7px -1px -23px;
+    line-height: 10px;    
+  }
+
+  .activitiesBox ul li.has-child>a.activeActivity .selectedIcon{
+    margin: 4px 7px -1px -35px;
+  }
+
+
+  
+  .activitiesBox>ul>li>ul>li {
+    margin-left: 10px;
+  }
+  
+  /* tree-view */
+.tree-view {
+  /* background-color: #E8E8E8;
+  padding: 20px 0; */
+  max-height: calc(90vh - 10px);
+  overflow-y: auto;
+}
+
+.tree-view ul {
+  list-style: none;
+  padding-left: 14px;
+}
+
+.tree-view li {
+  font-family: Candara, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #464646;
+  /* padding: 5px 0 5px 13px; */
+}
+
+/* .tree-view li.has-child {
+  padding: 5px 3px;
+}
+
+.tree-view li.has-child.open {
+  padding: 5px 3px 5px 0px;
+}
+
+.tree-view ul>li:last-child {
+  padding-bottom: 0;
+} */
+
+.tree-view li>a {
+  color: #464646;
+  text-decoration: none;
+}
+
+/* .tree-view li>a::before {
+  content: '';
+  background: url('../../../assets/images/img-process-unselected.png') no-repeat left top;
+  width: 18px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+} */
+
+.tree-view li>a:hover,
+.tree-view li.active>a {
+  color: #EB3D3E;
+}
+
+/* .tree-view li>a:hover::before,
+.tree-view li.active>a::before {
+  background: url('../../../assets/images/img-process-selected.png') no-repeat left top;
+} */
+
+.tree-view li>.iconButton {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #464646;
+  border-right: 5px solid transparent;
+  display: none;
+  height: 0;
+  width: 0;
+  left: -5px;
+  top: 1px;
+  position: relative;
+  cursor: pointer;
+}
+.tree-view li.open>.iconButton {
+  border-top: 5px solid #464646;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 0;
+  left: -8px;
+  top: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.tree-view li.has-child>.iconButton {
+  display: block; 
+  float: left;
+}
+.activitiesBox .tree-view li.has-child>a {
+  margin-left:0;
+}
+
+
+/* tree-view ends */

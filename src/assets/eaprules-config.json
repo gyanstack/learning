@@ -1,0 +1,26 @@
+{
+  "eventSource": {
+    "name": "Event Source",
+    "type": "string"
+  },
+  "eventType": {
+    "name": "Event Type",
+    "type": "string"
+  },
+  "eventName": {
+    "name": "Event Name",
+    "type": "string"
+  },
+  "lob": {
+    "name": "Line of Business",
+    "type": "string"
+  },
+  "transactionId": {
+    "name": "Transaction Id",
+    "type": "string"
+  },
+  "userName": {
+    "name": "User Name",
+    "type": "string"
+  }
+}

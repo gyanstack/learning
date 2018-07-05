@@ -1,0 +1,68 @@
+<!--Breadcrumb-->
+<div class="row cclBreadcrumb">
+  <div class="col-md-3 breadcrumbLeft">
+    EAP Mapping Rules
+    <i class="breadcrumbIcon">
+      <img src="assets/images/img-EAP.png">
+    </i>
+  </div>
+  <div class="col-md-9 headWrapper">
+    <h2>Rules Details</h2>
+  </div>
+</div>
+
+<!--content-->
+
+<div class="container-fluid contentWrapper" appAutoHeight>
+  <div class="row">
+    <div class="col-md-11">
+      <h1>Mapping Rules</h1>
+    </div>
+    <div class="col-md-1 rulesWrapper">
+
+      <div class="rulesIcon guideRulesIcon">
+
+        <span (click)="openNewGuidedRule()">
+          <span matTooltip="Add Guided Rule">
+            <img src="assets/images/eap-guide-rules-icon.png">
+          </span>
+
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <section class="col-md-12">
+      <div class="eapRuleSection">
+        <div class="eapRuleHead">
+          Rule Name
+        </div>
+        <form [formGroup]="eapRuleForm" class="erpRuleForm">
+          <div class="row form-group">
+            <div class="col-md-12" style="padding-left: 50px ">
+              <mat-form-field>
+                <input matInput placeholder="Search" width="100%" autocomplete="off" formControlName="search" autocomplete="off">
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+        <ul class="eapRules">
+          <li *ngFor="let rule of pageRules">
+            <div class="rulesContent">
+              <span>
+                <a (mouseover)='rule.ruleHover=true' (mouseleave)='rule.ruleHover=false' (click)="openRule(rule)">{{rule.name}}</a>
+              </span>
+            </div>
+            <div *ngIf="rule.ruleHover" class="rulesPopoverContent">
+              {{rule.name}}
+            </div>
+          </li>
+        </ul>
+        <mat-paginator #paginator [length]="rules.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" (page)="setPaginator($event)">
+        </mat-paginator>
+      </div>
+    </section>
+  </div>
+</div>
